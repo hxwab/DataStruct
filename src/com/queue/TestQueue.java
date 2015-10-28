@@ -14,8 +14,6 @@ public class TestQueue {
 	
 	public void Testqueue() throws Exception{
 		Queue q = new Queue(5);
-		
-	
 		q.insert(2);
 		q.insert(3);
 		q.insert(4);
