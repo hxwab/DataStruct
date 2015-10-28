@@ -133,7 +133,11 @@ class Queue2{
 	    public void insert(int j){
 	        if(rear==SIZE-1)
 	            rear=0;
+<<<<<<< HEAD
 	        queArray[rear++]=j;
+=======
+	        queArray[rear++]=j; //需注意该操作与指向带插入位置前一个位置的区别
+>>>>>>> origin/master
 	    }
 	    public int remove(){
 	        int temp=queArray[front++];

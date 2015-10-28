@@ -138,7 +138,40 @@ public class Graph {
 	        }
 	      
 	    }
+<<<<<<< HEAD
 	
 	
+=======
+	  
+	  
+	  
+	  public void mst(){
+		  
+		  StackV stack = new StackV();
+		  char currentLable = vertexList[0].lable;
+		  vertexList[0].wasVisited= true;
+		  //displayVertex(0);
+		  stack.push(currentLable);
+		  
+		  
+		  while(!stack.isEmpty()){
+			  currentLable = stack.peek();
+			  char lab = getAdjUnvisitedVertex(currentLable);
+			  if(lab=='0'){
+				  stack.pop();
+			  } else {
+				  
+				   vertexList[lab-'A'].wasVisited=true;
+				   stack.push(lab);
+				   displayVertex(currentLable-'A');
+				   displayVertex(lab-'A');
+				   System.out.println("****");
+				  
+			  }
+			  
+		  }
+		  
+	  }
+>>>>>>> origin/master
 	
 }
