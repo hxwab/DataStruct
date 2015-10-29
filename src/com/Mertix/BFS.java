@@ -1,8 +1,6 @@
 package com.Mertix;
 
 /**
-<<<<<<< HEAD
-
  * 广度优先搜索
  * @author huangxw
  *
