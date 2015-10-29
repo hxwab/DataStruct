@@ -63,7 +63,16 @@ public class Graph {
 		
 	}
 
-	
+	public char getAdjNextVertex(char lable){
+		for(int j=0;j<nVerts;j++){
+			if(adjMat[lable-'A'][j]==1){
+				adjMat[lable-'A'][j]=0;
+				return (char)('A'+j);
+			}
+		}
+		return '0';
+		
+	}
 	
 	
 	public void displayVertex(int v){
@@ -79,7 +88,36 @@ public class Graph {
 		
 	}
 	
+	/**
+	 * 递归调用
+	 * 1、访问顶点v并置标识为true
+	 * 2、w=v的第一个邻接点
+	 * 3、while(w存在){
+	 *   if(w未被访问){
+	 *     DFS(W);
+	 *   }else{
+	 *   	w=顶点V的下一个邻接点
+	 *   }
+	 *    
+	 * }
+	 * @param lab
+	 */
+	public void DFS(char lab){
+		
+		vertexList[lab-'A'].wasVisited=true;
+		displayVertex(lab-'A');
+		char next = getAdjNextVertex(lab);
+		while(next!='0'){
+			if(!vertexList[next-'A'].wasVisited){
+				DFS(next);
+			} else{
+				next =getAdjNextVertex(lab);
+			}
+		}
+		
+	}
 	
+	//非递归方法
 	public void DFS(){
 		
 		StackV stack = new StackV();
