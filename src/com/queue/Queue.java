@@ -7,7 +7,7 @@ import javax.swing.plaf.basic.BasicInternalFrameTitlePane.MaximizeAction;
 
 
 /**
- * ������nItems������Ԫ�ظ������������ж϶���Ϊ�ջ����
+ * 增加了nItems来表明元素个数，进而简化判断队列为空或溢出
  * @author huangxw
  *
  */
@@ -16,9 +16,9 @@ public class Queue <T> {
 	private Class<T> type;
 	private int MAX_SIZE;
 	private T[] queue;
-	private int front;//��ͷָ�루ָ����Ƴ���λ�ã�
-	private int rear;//��βָ�루ָ�������λ�õ�ǰһ��λ�ã�
-	private int nItems;//����Ԫ�ظ���
+	private int front;//队头指针（指向待移除的位置）
+	private int rear;//队尾指针（指向待插入位置的前一个位置）
+	private int nItems;//队中元素个数
 	
 	
 
@@ -33,7 +33,7 @@ public class Queue <T> {
 	}
 	
 	/**
-	 * �����β������������ĩβ����Ҫ�ж��Ƿ��������δ����򽫶�βָ����Ϊ-1
+	 * 插入队尾，若到了数组末尾，则要判断是否溢出，若未溢出则将队尾指针置为-1
 	 * @param item
 	 * @throws Exception 
 	 */
@@ -49,14 +49,14 @@ public class Queue <T> {
 			System.out.println(front+"*****"+rear+"*****");
 		}else {
 			
-			throw new Exception("���");
+			throw new Exception("溢出");
 		}
 		
 		
 	}
 	
 	/**
-	 * ȡ�ö�ͷԪ�أ���ͷָ����ƣ�nItems--;
+	 * 取得队头元素，队头指针后移，nItems--;
 	 * @return
 	 */
 	public T remove(){
@@ -121,10 +121,10 @@ class Queue1{
 	
 class Queue2{
 	
-	  private final int SIZE=20;//���һ���ռ�ճ���
+	  private final int SIZE=20;//最后一个空间空出来
 	    private int[] queArray;
-	    private int front;//ָ�����λ��
-	    private int rear;//ָ���βλ�õ���һ��λ�ã�������λ�ã�
+	    private int front;//指向队首位置
+	    private int rear;//指向队尾位置的下一个位置（待插入位置）
 	    public Queue2(){
 	        queArray=new int[SIZE];
 	        front=0;
@@ -133,11 +133,8 @@ class Queue2{
 	    public void insert(int j){
 	        if(rear==SIZE-1)
 	            rear=0;
-<<<<<<< HEAD
-	        queArray[rear++]=j;
-=======
-	        queArray[rear++]=j; //��ע��ò�����ָ�������λ��ǰһ��λ�õ�����
->>>>>>> origin/master
+
+	        queArray[rear++]=j; //需注意该操作与指向带插入位置前一个位置的区别
 	    }
 	    public int remove(){
 	        int temp=queArray[front++];
