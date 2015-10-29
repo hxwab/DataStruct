@@ -14,11 +14,7 @@ public class TestQueue {
 	
 	public void Testqueue() throws Exception{
 		Queue q = new Queue(5);
-<<<<<<< HEAD
-		
-	
-=======
->>>>>>> origin/master
+
 		q.insert(2);
 		q.insert(3);
 		q.insert(4);
@@ -30,11 +26,7 @@ public class TestQueue {
 		
 		while(!q.isEmpty()){
 			System.out.println(q.remove());
-		}
-<<<<<<< HEAD
-		
-=======
->>>>>>> origin/master
+
 	}
 
 }
