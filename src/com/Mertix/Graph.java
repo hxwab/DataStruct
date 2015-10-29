@@ -4,14 +4,14 @@ import com.queue.Queue;
 
 /**
  * 
- * * ±íÊ¾Í¼µÄÁ½ÖÖ·½·¨(µ¥ÏòºÍÓĞÏò)
- * 1.ÁÚ½Ó¾ØÕó
+ * * è¡¨ç¤ºå›¾çš„ä¸¤ç§æ–¹æ³•(å•å‘å’Œæœ‰å‘)
+ * 1.é‚»æ¥çŸ©é˜µ
  *   A B C D
  * A 0 1 0 1     A--B--C
  * B 1 0 1 1     | /
  * C 0 1 0 0     D
  * D 1 1 0 0
- * 2.ÁÚ½Ó±í
+ * 2.é‚»æ¥è¡¨
  *  
  * A   B-C-D
  * B   A-C-D
@@ -85,18 +85,18 @@ public class Graph {
 		StackV stack = new StackV();
 		char temp;
 		
-		//È¡¶¥µãÔªËØ±ê¼Ç²¢Ñ¹ÈëÕ»ÖĞ
+		//å–é¡¶ç‚¹å…ƒç´ æ ‡è®°å¹¶å‹å…¥æ ˆä¸­
 		vertexList[0].wasVisited=true;
 		temp = vertexList[0].lable;
 		displayVertex(0);
 		stack.push(temp);
 		
 		while(!stack.isEmpty()){
-			//»ñÈ¡ÁÚ½ÓÎ´·ÃÎÊµÄ¶¥µã
+			//è·å–é‚»æ¥æœªè®¿é—®çš„é¡¶ç‚¹
 			char lab = getAdjUnvisitedVertex(stack.peek());
-			if(lab=='0'){//Ã»ÓĞÎ´·ÃÎÊµÄÁÚ½Ó¶¥µã£¬Ôòµ¯³öÕ»¶¥ÔªËØ
+			if(lab=='0'){//æ²¡æœ‰æœªè®¿é—®çš„é‚»æ¥é¡¶ç‚¹ï¼Œåˆ™å¼¹å‡ºæ ˆé¡¶å…ƒç´ 
 				stack.pop();
-			} else {//ÓĞÎ´·ÃÎÊµÄÁÚ½Ó¶¥µãÔò±ê¼Ç²¢Ñ¹ÈëÕ»ÖĞ
+			} else {//æœ‰æœªè®¿é—®çš„é‚»æ¥é¡¶ç‚¹åˆ™æ ‡è®°å¹¶å‹å…¥æ ˆä¸­
 				vertexList[lab-'A'].wasVisited=true;
 				displayVertex(lab-'A');
 				stack.push(lab);
@@ -105,7 +105,7 @@ public class Graph {
 	}
 	
 	/**
-	 * Ë«ÖØÑ­»·
+	 * åŒé‡å¾ªç¯
 	 */
 	  public void BFS(){
 		  
@@ -124,8 +124,8 @@ public class Graph {
 			
 	        char v2;
 	        while(!theQueue.isEmpty()){
-	            char v1=(Character) theQueue.remove();//Ã»ÓĞÎ´·ÃÎÊµÄÁÚ½ÓµÄµãÊ±£¬³ö¶Ó£¨¸ù½ÚµãÖ±½Ó³ö¶Ó£©
-	            while((v2=getAdjUnvisitedVertex(v1))!='0'){//²éÕÒ³ö¶Ó½ÚµãµÄÎ´·ÃÎÊµÄÁÚ½Óµã£¬²¢Èë¶Ó
+	            char v1=(Character) theQueue.remove();//æ²¡æœ‰æœªè®¿é—®çš„é‚»æ¥çš„ç‚¹æ—¶ï¼Œå‡ºé˜Ÿï¼ˆæ ¹èŠ‚ç‚¹ç›´æ¥å‡ºé˜Ÿï¼‰
+	            while((v2=getAdjUnvisitedVertex(v1))!='0'){//æŸ¥æ‰¾å‡ºé˜ŸèŠ‚ç‚¹çš„æœªè®¿é—®çš„é‚»æ¥ç‚¹ï¼Œå¹¶å…¥é˜Ÿ
 	                vertexList[v2-'A'].wasVisited=true;
 	                displayVertex(v2-'A');
 	                try {
@@ -138,10 +138,6 @@ public class Graph {
 	        }
 	      
 	    }
-<<<<<<< HEAD
-	
-	
-=======
 	  
 	  
 	  
@@ -172,6 +168,6 @@ public class Graph {
 		  }
 		  
 	  }
->>>>>>> origin/master
+
 	
 }
