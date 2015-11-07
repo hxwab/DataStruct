@@ -74,6 +74,37 @@ public class Graph {
 		adjMat[lable1-'A'][lable2-'A']=1;
 	}
 	
+	/**
+	 * 查找有向图的后继节点(全为0，且未被访问的节点)
+	 *也有找到后直接删除的（全为0）
+	 * @return
+	 */
+	public char getSuccessor(){
+		for(int i = 0 ; i<nVerts ; i++){
+			
+			for(int j =0 ;j<nVerts;j++)
+				if(adjMat[i][j]!=0){
+					break;
+				} else if(j==nVerts-1&&!vertexList[i].wasVisited){
+					return (char)(i+'A');
+				}
+		}
+		
+		return '0';
+		
+	}
+	
+	/**
+	 * 将节点清除，全部置为0，也有直接将节点删除的
+	 * @param lab
+	 */
+	public void cleanChar(char lab){
+		for(int i=0;i<nVerts;i++){
+			adjMat[i][lab-'A']=0;
+		}
+		
+	}
+	
 	public char getAdjUnvisitedVertex(char lable){
 		for(int j=0;j<nVerts;j++){
 			if(adjMat[lable-'A'][j]==1 && !vertexList[j].wasVisited  )
