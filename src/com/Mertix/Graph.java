@@ -105,6 +105,11 @@ public class Graph {
 		
 	}
 	
+	/**
+	 * 找到未被访问的邻接顶点
+	 * @param lable
+	 * @return
+	 */
 	public char getAdjUnvisitedVertex(char lable){
 		for(int j=0;j<nVerts;j++){
 			if(adjMat[lable-'A'][j]==1 && !vertexList[j].wasVisited  )
@@ -113,6 +118,12 @@ public class Graph {
 		return '0';
 		
 	}
+
+	/**
+	 * 找到邻接顶点,对图有影响
+	 * @param lable
+	 * @return
+	 */
 
 	public char getAdjNextVertex(char lable){
 		for(int j=0;j<nVerts;j++){
@@ -257,6 +268,32 @@ public class Graph {
 		  }
 		  
 	  }
-
+	  
+	  
+	   有向图的拓扑排序
+	   */
+	  public void topo(){
+		  
+		  int size = nVerts;
+		  char lab;
+		  
+		  while(size>0){
+			  
+			 lab = getSuccessor();
+			 if(lab!='0'){
+				 
+				 vertexList[lab-'A'].wasVisited=true;
+				 cleanChar(lab);
+				 sortChar[size-1]=lab;
+			 } else{
+				 
+				 System.out.println("ERROR:存在环路");
+				 return;
+			 }
+		  }
+		  
+		  for(int i=0;i<nVerts;i++)
+		  {
+	  }
 	
 }
