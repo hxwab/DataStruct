@@ -46,9 +46,19 @@ public class Graph {
 			vertexList[j].wasVisited=false;
 	}
 	
+        /**
+	 * 加入顶点
+	 * @param lable
+	 */
 	public void addVertex(char lable){
 		vertexList[nVerts++] = new Vertex(lable);
 	}
+
+        /**
+	 * 加入无向图的边,对角阵
+	 * @param lable1
+	 * @param lable2
+	 */
 	
 	public void addEage(char lable1 ,char lable2){
 		adjMat[lable1-'A'][lable2-'A']=1;
