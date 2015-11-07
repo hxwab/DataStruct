@@ -23,10 +23,12 @@ import com.queue.Queue;
 public class Graph {
 	
 	private final int MAX_VERTS = 10;
-	private Vertex[] vertexList;
-	private int[][] adjMat;
-	private int nVerts;
-	private Queue theQueue;
+	private Vertex[] vertexList;  //存放顶点信息
+	private int[][] adjMat;    //存放图
+	private int nVerts;   // 节点个数
+	private Queue theQueue;  //队列
+	private char[] sortChar;  //有向图拓扑排序
+
 	
 	public Graph() {
 		vertexList = new Vertex[MAX_VERTS];
