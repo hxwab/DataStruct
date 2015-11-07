@@ -65,6 +65,14 @@ public class Graph {
 		adjMat[lable2-'A'][lable1-'A']=1;
 	}
 	
+	/**
+	 * 加入有向图的边，上三角阵
+	 * @param lable1
+	 * @param lable2
+	 */
+	public void addEageDir(char lable1,char lable2){
+		adjMat[lable1-'A'][lable2-'A']=1;
+	}
 	
 	public char getAdjUnvisitedVertex(char lable){
 		for(int j=0;j<nVerts;j++){
