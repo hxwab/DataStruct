@@ -33,13 +33,7 @@ public class Warshall {
 		
 		ws.warshall1(graph.getAdjMat(), graph.getnVerts());
 		graph.displayGraph();
-		
 	}
-	
-	
-	
-	
-	
 	
 	
 	public int[][] warshall(int[][] adjMat,int size){
