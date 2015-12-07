@@ -23,13 +23,11 @@ public class Warshall {
 		graph.addVertex('D');
 		graph.addVertex('E');
 		
-		
 		graph.addEageDir('A', 'C');
 		graph.addEageDir('B', 'A');
 		graph.addEageDir('B', 'E');
 		graph.addEageDir('D', 'E');
 		graph.addEageDir('E', 'C');
-		
 		
 		ws.warshall1(graph.getAdjMat(), graph.getnVerts());
 		graph.displayGraph();
@@ -75,8 +73,5 @@ public class Warshall {
 				}
 			}
 		}
-		
 	}
-	
-
 }
