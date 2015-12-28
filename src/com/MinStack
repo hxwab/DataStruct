@@ -6,7 +6,6 @@ public class Solution {
     int top = -1;
     int []m = new int[20];
     
-    
     public void push(int node) {
         if(top<20){
             stack[++top]=node;
