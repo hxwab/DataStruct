@@ -1,0 +1,30 @@
+/*
+public class ListNode {
+    int val;
+    ListNode next = null;
+
+    ListNode(int val) {
+        this.val = val;
+    }
+}*/
+public class Solution {
+    public ListNode ReverseList(ListNode head) {
+        
+        ListNode t = null;
+        ListNode p= head;
+        boolean isTail = false;
+        
+        while(!isTail){
+            t=p.next;
+            if(t.next==null){
+                isTail = true;
+            }
+            t.next = p;
+            p= p.next;
+        }
+        head.next = null;
+        
+        return t;
+       
+    }
+}
