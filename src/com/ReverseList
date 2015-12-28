@@ -1,30 +1,49 @@
-/*
-public class ListNode {
+ /**
+ *http://www.nowcoder.com/practice/75e878df47f24fdc9dc3e400ec6058ca?rp=1&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking
+ *链表反转
+ 
+ 一定要考虑全面，head为空的情况
+ 
+ t(前) head pNext（后）
+ */
+ 
+ 
+ 
+ class ListNode {
     int val;
     ListNode next = null;
 
     ListNode(int val) {
         this.val = val;
     }
-}*/
+}
 public class Solution {
     public ListNode ReverseList(ListNode head) {
         
-        ListNode t = null;
-        ListNode p= head;
-        boolean isTail = false;
-        
-        while(!isTail){
-            t=p.next;
-            if(t.next==null){
-                isTail = true;
-            }
-            t.next = p;
-            p= p.next;
-        }
-        head.next = null;
-        
-        return t;
+         if(head==null){
+	        	return head;
+	        }
+		 
+	        ListNode t = null;
+	        ListNode p= head;
+	        ListNode pNext=head.next;
+	       
+	        
+	       
+	        if(head.next==null){
+	            return head;
+	        }
+	        
+	        while(pNext!=null){
+	           t = p;
+	           p =pNext;
+	           pNext = pNext.next;
+	           p.next=t;
+	        }
+	        head.next = null;
+	        
+	        return p;
+	       
        
     }
 }
