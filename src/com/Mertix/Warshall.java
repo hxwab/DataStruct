@@ -29,7 +29,9 @@ public class Warshall {
 		graph.addEageDir('D', 'E');
 		graph.addEageDir('E', 'C');
 		
+		//ws.warshall1(graph.getAdjMat(), graph.getnVerts());
 		ws.warshall1(graph.getAdjMat(), graph.getnVerts());
+
 		graph.displayGraph();
 	}
 	

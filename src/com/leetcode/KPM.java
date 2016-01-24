@@ -1,6 +1,6 @@
-package com.kpm;
+package com.leetcode;
 
-public class KMP {
+public class KPM {
 	
 	
 	public void getNext(String p , int[] next){

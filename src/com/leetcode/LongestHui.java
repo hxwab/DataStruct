@@ -1,4 +1,4 @@
-package com.kpm;
+package com.leetcode;
 
 /**
  * 最长回文子串
@@ -7,6 +7,6 @@ package com.kpm;
  * @author huangxw
  *
  */
-public class LogestHui {
+public class LongestHui {
 
 }
