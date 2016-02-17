@@ -9,9 +9,15 @@ public abstract class Sort {
 	
 	public abstract void order( int [] a);
 	
-	public int getMaxIndex(int[] a){
+	/**
+	 * 找出索引截止end的最大值
+	 * @param a
+	 * @param end
+	 * @return
+	 */
+	public int getMaxIndex(int[] a,int end){
 		int maxIndex =0;
-		for(int i=0;i<a.length;i++){
+		for(int i=end;i<a.length;i++){
 			if(a[maxIndex]<a[i]){
 				maxIndex=i;
 			}
@@ -20,9 +26,15 @@ public abstract class Sort {
 		return maxIndex;
 	}
 	
-	public int getMinIndex(int[] a){
-		int minIndex =0;
-		for(int i=0;i<a.length;i++){
+	/**
+	 * 找出索引从start开始的最小值
+	 * @param a
+	 * @param start
+	 * @return
+	 */
+	public int getMinIndex(int[] a,int start){
+		int minIndex =start;
+		for(int i=start;i<a.length;i++){
 			if(a[minIndex]>a[i]){
 				minIndex=i;
 			}

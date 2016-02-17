@@ -7,10 +7,29 @@ package com.sort;
  */
 public class SelectSort extends Sort {
 
-	@Override
 	public void order(int[] a) {
-		// TODO Auto-generated method stub
 
+		int minIndex;
+		for(int i=0;i<a.length;i++){
+			minIndex = getMinIndex(a,i);
+			swap(a, i, minIndex);
+		}
+		
+	}
+	
+	public void order1(int[] a) {
+
+		int minIndex;
+		for(int i=0;i<a.length;i++){
+			minIndex=i;
+			for(int j=i;j<a.length;j++){
+				if(a[minIndex]>a[j]){
+					minIndex=j;
+				}
+			}
+			swap(a, i, minIndex);
+		}
+		
 	}
 
 }
