@@ -2,6 +2,7 @@ package com.sort;
 
 /**
  * 冒泡排序:1.比较相邻元素大小 2.交换
+ * 比较和比较均为n^2
  * @author csdc
  *
  */
@@ -29,6 +30,16 @@ public class BubbleSort extends Sort {
 			}
 		}
 		
+		/*int  out ;
+		int in;
+		
+		for(out = a.length-1;out>1;out--){
+			for(in = 0;in<out;in++){
+				if(a[in]>a[in+1]){
+					swap(a, in, in+1);
+				}
+			}
+		}*/
 	}
 	
 
