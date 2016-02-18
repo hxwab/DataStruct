@@ -8,6 +8,7 @@ public class Test {
 		Sort sort ;
 		sort = new BubbleSort();
 		sort = new SelectSort();
+		sort = new InsertSort();
 		sort.sort(array);
 	}
 
