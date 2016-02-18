@@ -22,5 +22,20 @@ public class InsertSort extends Sort {
 		}
 
 	}
+	
+	public void order1(int[] a) {
+		int temp;
+		int index ;
+		for(int i= 1;i<a.length;i++){
+			index = i;
+			temp = a[index];
+			while(index>0&&temp<a[index-1]){
+				a[index]=a[index-1];
+				index--;
+			}
+			a[index]=temp;
+		}
+
+	}
 
 }
