@@ -10,6 +10,7 @@ public class Test {
 		sort = new SelectSort();
 		sort = new InsertSort();
 		sort = new QuickSort();
+		sort = new MergeSort();
 		sort.sort(array);
 	}
 

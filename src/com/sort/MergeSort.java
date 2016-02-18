@@ -1,5 +1,14 @@
 package com.sort;
-
+/**
+ * 归并法排序：（分治思想）
+ * 1、左边数组分解
+ * 2、右边数组分解
+ * 3、合并成大数组
+ * @author csdc
+ *归并排序
+*分到最细了,就剩两个数,归并,依次类推
+*  本质是靠归并(有序的merge)排的序
+ */
 public class MergeSort extends Sort {
 
 	@Override
@@ -15,26 +24,26 @@ public class MergeSort extends Sort {
 		int left = first;
 		int right = last;
 		int midd = mid+1;
-		int index=first;
+		int index=0;
 		
 		while(left<=mid&&midd<=right){
 			if(a[left]<a[midd]){
 				temp[index++]=a[left++];
-			}else if(a[left]>a[midd]){
+			}else {
 				temp[index++]=a[midd++];
 			}
 		}
 		
-		while(left<midd){
+		while(left<=mid){
 			temp[index++]=a[left++];
 		}
 		
-		while(midd<right){
+		while(midd<=right){
 			temp[index++]=a[midd++];
 		}
 		
-		for(int i=first;i<right+1;i++){
-			a[i]=temp[i];
+		for(int i=0;i<temp.length;i++){
+			a[i+first]=temp[i];
 		}
 	}
 	
@@ -45,6 +54,8 @@ public class MergeSort extends Sort {
 			mergeSort(a, first, mid);
 			mergeSort(a, mid+1, last);
 			mergeArray(a, first, mid, last);
+			display(a);
+			System.out.println("");
 			
 		}
 	}
