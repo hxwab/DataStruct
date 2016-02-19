@@ -7,6 +7,7 @@ import java.util.Stack;
  * @author huangxw
  *http://www.cnblogs.com/kaituorensheng/archive/2013/03/02/2939690.html
  * @param <T>
+ * 利用堆栈的先进后出的特性，两个栈相互倒转就可以实现
  */
 
 public class Stack2Quene  {
