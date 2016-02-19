@@ -17,7 +17,7 @@ public abstract class Sort {
 	 */
 	public int getMaxIndex(int[] a,int end){
 		int maxIndex =0;
-		for(int i=end;i<a.length;i++){
+		for(int i=0;i<end;i++){
 			if(a[maxIndex]<a[i]){
 				maxIndex=i;
 			}

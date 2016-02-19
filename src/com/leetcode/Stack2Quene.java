@@ -47,6 +47,21 @@ class Stack2Quenue<T>{
 		return t;
 	}
 	
+	
+	public T deQuenue0(){
+		T t = null;
+		
+		if(stackOut.isEmpty()){
+			while(!stackIn.isEmpty())
+				stackOut.push(stackIn.pop());
+		}
+		if(stackOut.isEmpty())
+			System.out.println("为空");
+		else
+			t=stackOut.pop();
+		return t;
+	}
+	
 	public T deQuenue(){
 		T t = null;
 		
