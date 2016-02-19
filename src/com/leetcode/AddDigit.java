@@ -55,7 +55,6 @@ public boolean isAnagram(String s, String t) {
         for(int i =0 ; i<s.length();i++){
             maps.put(s.charAt(i),maps.get(s.charAt(i))==null?1:(Integer)maps.get(s.charAt(i))+1);
             mapt.put(t.charAt(i),mapt.get(t.charAt(i))==null?1:(Integer)mapt.get(t.charAt(i))+1);
-            mapt.
         }
         
 
