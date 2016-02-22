@@ -38,7 +38,6 @@ public class QuickSort extends Sort {
 			recQuickSort(a, left, partition-1);
 			recQuickSort(a, partition+1, right);
 		}
-		
 	}
 	
 	/**
