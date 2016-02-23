@@ -12,8 +12,8 @@ package com.newcode;
 public class Clear {
 	
 	
-	private int[][] mat ={{0,0,1},{0,1,2},{1,2,3}};
-	int n=3;
+	private int[][] mat ={{0,0,1,3},{0,1,2,4},{1,2,3,0},{1,2,3,4}};
+	int n=4;
 	
 	public static void main(String[] args) {
 		Clear c = new Clear();
@@ -21,14 +21,39 @@ public class Clear {
 		c.display();
 	}
 	public void test(){
-		clearZero(mat, n);
+		//clearZero(mat, n);
+		clearZero(mat);
 	}
 	
 	
 	public void clearZero(int[][] mat) {
 		
-		boolean [] xMat = new boolean[n];
+		boolean [] xMat = new boolean[n];//节省空间只占1bit
 		boolean [] yMat = new boolean[n];
+		for(int i=0;i<n;i++){
+			for(int j=0;j<n;j++){
+				if(mat[i][j]==0){
+					
+					xMat[i]=true;
+					yMat[j]=true;
+				}
+			}
+		}
+		
+		for(int i=0;i<n;i++){
+			if(xMat[i]){
+				for(int j=0;j<n;j++){
+					mat[i][j]=0;
+				}
+			}
+		}
+		for(int i=0;i<n;i++){
+			if(yMat[i]){
+				for(int j=0;j<n;j++){
+					mat[j][i]=0;
+				}
+			}
+		}
 		
 	}
 	
