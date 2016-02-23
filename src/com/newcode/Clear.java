@@ -1,4 +1,7 @@
 package com.newcode;
+
+import java.util.HashSet;
+
 /**
  * 请编写一个算法，若MxN矩阵中某个元素为0，则将其所在的行与列清零。
 给定一个MxN的int[][]矩阵(C++中为vector>)mat和矩阵的阶数n，请返回完成操作后的int[][]矩阵(C++中为vector>)，
@@ -25,7 +28,35 @@ public class Clear {
 		clearZero(mat);
 	}
 	
+	/**
+	 * O(N^2)
+	 * @param mat
+	 * @param n
+	 */
+	public void clearZero1(int[][] mat, int n) {
+        // write code here
+        HashSet x = new HashSet();
+        HashSet y = new HashSet();
+        for (int i=0; i<n; i++)
+            for (int j=0; j<n; j++)
+            {
+                if (mat[i][j] == 0) {
+                    x.add(i);
+                    y.add(j);
+                }
+            }
+        for (int i=0; i<n; i++) {
+            for (int j=0; j<n; j++) {
+                if (x.contains(i) || y.contains(j))
+                    mat[i][j] = 0;
+            }
+        }
+    }
 	
+	/**
+	 * O(N^2)
+	 * @param mat
+	 */
 	public void clearZero(int[][] mat) {
 		
 		boolean [] xMat = new boolean[n];//节省空间只占1bit
@@ -57,7 +88,12 @@ public class Clear {
 		
 	}
 	
-	
+	/**
+	 * O(n^3)
+	 * @param mat
+	 * @param n
+	 * @return
+	 */
 	public int[][] clearZero(int[][] mat, int n) {
 		boolean [][] flag = new boolean[n][n];
 		
