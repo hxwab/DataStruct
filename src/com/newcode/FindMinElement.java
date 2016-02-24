@@ -10,25 +10,63 @@ package com.newcode;
 public class FindMinElement {
 
 	public static void main(String[] args) {
-		int a[] = {4,5,6,7,8,9,10,1,2,3};
-		new FindMinElement().findNum(a);
+		int a[] = {4,5,6,7,8};
+		new FindMinElement().findNum(a,5);
 	}
 	
+	
+	/**
+	 * 二分查找法,总会在a[mid]=num时结束或low=high结束
+	 * @param a
+	 * @param num
+	 * @return
+	 */
+	public int  findNum(int []a ,int num){
+		
+		int low =0;
+		int high = a.length-1;
+		int index = 0;
+		while(low<=high){
+			int mid = (low+high)/2;
+			if(a[mid]<num){
+				low = mid+1;
+			}else if(a[mid]>num){
+				high=mid-1;
+			}else{
+				index = mid;
+				break;
+			}
+		}
+		System.out.println(a[index]);
+		return a[index];
+	}
+	
+	
+	/**
+	 * 
+	 * @param a
+	 */
 	public void findNum(int [] a ){
 		int low =0;
 		int high = a.length-1;
-		
-		while(low<high){
+		int index = 0;
+		while(low<high-1){
 			int mid =(low+high)/2;
 			if(a[mid]>a[low]){//说明前半段递增，拐点一定在后面
 				low =mid+1;
 			}else if(a[mid]<a[low]){//在前半段
 				high=mid;
+			}else{
+				if(a[low]>a[high]){
+					index = high;
+				}else{
+					index =low;
+				}
 			}
 			
 		}
 		
-		System.out.println(a[high]);
+		System.out.println(a[index]);
 		
 	}
 }
