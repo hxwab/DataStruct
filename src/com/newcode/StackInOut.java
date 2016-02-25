@@ -12,6 +12,12 @@ import java.util.Stack;
  *入栈序列遍历完毕会出现两种情况，
  *1：辅助栈为空，说明出栈序列正确
  *2：辅助栈不为空，则说明还有元素没有出栈。每弹出一个元素就跟出栈序列index处元素比较，相同则后移，继续出栈比较。不同则返回false。最后栈为空则返回true
+ *
+ *1    2   3   4               1   2  3  5                  1   2   3  
+ *  (push)     |- push (pop)             |-push (pop)               |-pop
+ *
+ *4    5   3   2   1           4  5    3  2  1             4  5   3  2  1 
+ *|-index                         |-index                         |-index
  */
 public class StackInOut {
 
