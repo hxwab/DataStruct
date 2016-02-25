@@ -6,12 +6,14 @@ package com.newcode;
  *
  *题目的关键点在于找到转折点。该转折点具有的特性：从前面看是递减的，从后面看是递增的
  *首中尾
+ *1、遍历
+ *2、二分查找
  */
 public class FindMinElement {
 
 	public static void main(String[] args) {
-		int a[] = {4,5,6,7,8};
-		new FindMinElement().findNum(a,5);
+		int a[] = {4,5,6,7,8,1 ,2,3};
+		new FindMinElement().findNum(a);
 	}
 	
 	
