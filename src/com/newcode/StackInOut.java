@@ -7,6 +7,11 @@ import java.util.Stack;
  * 例如序列1,2,3,4,5是某栈的压入顺序，序列4，5,3,2,1是该压栈序列对应的一个弹出序列，但4,3,5,1,2就不可能是该压栈序列的弹出序列。
  * @author csdc
  *
+ *
+ *思路：辅助栈每压入一个元素就跟出栈的序列相比较，相同则出栈序列index指针后移，同时被压入元素出栈。
+ *入栈序列遍历完毕会出现两种情况，
+ *1：辅助栈为空，说明出栈序列正确
+ *2：辅助栈不为空，则说明还有元素没有出栈。每弹出一个元素就跟出栈序列index处元素比较，相同则后移，继续出栈比较。不同则返回false。最后栈为空则返回true
  */
 public class StackInOut {
 
@@ -21,16 +26,17 @@ public class StackInOut {
 		if(pushA.length==0) return false; //要考虑为空的情况
 		Stack<Integer> stack = new Stack<Integer>();
 		int index =0;
+		//遍历入栈序列
 		for(int  item :pushA){
-		    stack.push(item);
-			if(item==popB[index]){
+		    stack.push(item);//入栈
+			if(item==popB[index]){//入栈元素出栈序列相比较，匹配则出栈，指针后移
 				stack.pop();
 				index++;
 			}
 		}
 		
 		while(!stack.isEmpty()){
-			if(stack.peek()==popB[index]){
+			if(stack.peek()==popB[index]){//栈顶元素跟出栈序列相比较，匹配则出栈，指针后移
 				stack.pop();
 				index++;
 			}else {
