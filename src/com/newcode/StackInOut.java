@@ -1,5 +1,6 @@
 package com.newcode;
 
+import java.util.ArrayList;
 import java.util.Stack;
 
 /**
@@ -52,4 +53,34 @@ public class StackInOut {
 		
 		return true;
 	}
+	
+	public boolean isInOrder1(int [] pushA , int[] popB){
+		if(pushA.length==0) return false; //要考虑为空的情况
+		Stack<Integer> stack = new Stack<Integer>();
+		int index =0;
+		//遍历入栈序列,一次压入可以有多次淡出判断
+		for(int i = 0,j = 0 ;i < pushA.length;){
+            stack.push(pushA[i++]);
+            while(j < pushA.length && stack.peek() == popB[j]){
+                stack.pop();
+                j++;
+            }      
+        }
+        return stack.empty();
+		
+	}
+	
+	public boolean isInOrder2(int [] pushA,int [] popA) {
+        Stack<Integer> stack = new Stack();
+        if( pushA.length == 0 && popA.length == 0 ) return true;
+        for( int i=0,j=0; i < pushA.length; i++ ){
+            stack.push( pushA[i] );
+            while( ( !stack.empty() )&& ( stack.peek() == popA[j] ) ){
+                stack.pop();
+                j ++;
+            } 
+        }
+         
+        return stack.empty() ;
+    }
 }
