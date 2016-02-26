@@ -1,7 +1,16 @@
 package com.trianning;
 
 import java.util.Scanner;
-
+/**
+ * http://www.nowcoder.com/practice/0a92c75f5d6b4db28fcfa3e65e5c9b3f?rp=1&ru=/ta/leetcode&qru=/ta/leetcode/question-ranking
+ * @author csdc
+ *
+ *1、牌型相同，则比小的
+ *2、牌型不同则看有没炸弹
+ *3、有王炸直接返回，否则看有没四个的炸弹，有则返回；都没有则返回error;
+ *
+ *特例：10占两个字符
+ */
 public class PlayCard {
 	
 	private  String [] s1;
@@ -49,6 +58,7 @@ public class PlayCard {
 		return result;
 	}
 	
+	//返回相对大小
 	private static int count(String str) {
         return "345678910JQKA2jokerJOKER".indexOf(str);
 	}
