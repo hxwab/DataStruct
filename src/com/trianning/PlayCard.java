@@ -37,7 +37,6 @@ public class PlayCard {
 		String  result=null;
 		
 		if(s1.length==s2.length){
-		
 				result = count(s1[0])>count(s2[0])?str1:str2;
 		} else {
 			
@@ -52,9 +51,7 @@ public class PlayCard {
 			}else {
 				result = "ERROR";
 			}
-			
 		}
-		
 		return result;
 	}
 	
