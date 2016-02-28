@@ -29,6 +29,7 @@ public class StackInOut {
 		System.out.println(result);
 	}
 	
+	//有问题
 	public boolean isInOrder(int [] pushA , int[] popB){
 		if(pushA.length==0) return false; //要考虑为空的情况
 		Stack<Integer> stack = new Stack<Integer>();
