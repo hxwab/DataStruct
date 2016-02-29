@@ -1,7 +1,8 @@
 package com.newcode.digui;
 /**
+ * 一只青蛙一次可以跳上1级台阶，也可以跳上2级。求该青蛙跳上一个n级的台阶总共有多少种跳法。
  * @author csdc
- *
+ *此题还可以应用到找出特定值的所有二叉树的路径
  */
 public class ForgJump {
 
