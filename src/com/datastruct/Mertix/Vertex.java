@@ -1,9 +1,9 @@
-package com.Mertix;
+package com.datastruct.Mertix;
 
 public class Vertex {
 	
-	public char lable; //节点
-	public boolean wasVisited;//是否访问过的标志
+	public char lable; //锟节碉拷
+	public boolean wasVisited;//锟角凤拷锟斤拷使锟侥憋拷志
 	
 	public Vertex(char lable) {
 		super();

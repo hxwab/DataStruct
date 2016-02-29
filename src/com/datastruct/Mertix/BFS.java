@@ -1,11 +1,14 @@
-package com.Mertix;
+package com.datastruct.Mertix;
 
-public class MST {
-
-	/**
-	 * @param args
-	 */
+/**
+ * 广度优先搜索
+ * @author huangxw
+ *
+ */
+public class BFS {
+	
 	public static void main(String[] args) {
+		
 		Graph graph = new Graph();
 		graph.reset();
 		graph.addVertex('A');
@@ -21,14 +24,16 @@ public class MST {
 		graph.addEage('B', 'E');
 		graph.addEage('A', 'C');
 		graph.addEage('C', 'F');
-		graph.addEage('E', 'F');
-		graph.addEage('C', 'B');
-		graph.addEage('A', 'E');
 		
+
+
 		
 		System.out.println("visitor:");
-		graph.mst();
+		graph.BFS();
+
+		
 
 	}
-
+	
+	
 }

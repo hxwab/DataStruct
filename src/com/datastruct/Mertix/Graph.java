@@ -1,4 +1,4 @@
-package com.Mertix;
+package com.datastruct.Mertix;
 
 import com.datastruct.queue.Queue;
 

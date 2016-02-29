@@ -1,4 +1,4 @@
-package com.Mertix;
+package com.datastruct.Mertix;
 
 public class StackV {
 	

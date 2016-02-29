@@ -1,4 +1,4 @@
-package com.Mertix;
+package com.datastruct.Mertix;
 
 /**
  * 有向图的连通性：拓扑排序

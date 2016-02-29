@@ -1,4 +1,4 @@
-package com.Mertix;
+package com.datastruct.Mertix;
 /**
  * 传递闭包,减少多步路径的判断
  * 如果能从顶点L到M，并且能从顶点M到N,那么可以从L到M
