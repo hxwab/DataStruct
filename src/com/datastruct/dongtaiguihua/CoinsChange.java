@@ -1,4 +1,4 @@
-package com.dongtaiguihua;
+package com.datastruct.dongtaiguihua;
 
 public class CoinsChange {
 	
