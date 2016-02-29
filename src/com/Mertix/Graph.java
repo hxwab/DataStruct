@@ -1,6 +1,6 @@
 package com.Mertix;
 
-import com.queue.Queue;
+import com.datastruct.queue.Queue;
 
 /**
  * 

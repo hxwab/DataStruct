@@ -1,4 +1,4 @@
-package com.sort;
+package com.datastruct.sort;
 
 /**
  * 冒泡排序:1.比较相邻元素大小 2.交换

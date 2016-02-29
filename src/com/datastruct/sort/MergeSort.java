@@ -1,4 +1,4 @@
-package com.sort;
+package com.datastruct.sort;
 /**
  * 归并法排序：（分治思想）
  * 1、左边数组分解

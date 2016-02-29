@@ -1,4 +1,4 @@
-package com.sort;
+package com.datastruct.sort;
 
 public class Test {
 	

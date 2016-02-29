@@ -1,4 +1,4 @@
-package com.queue;
+package com.datastruct.queue;
 /**
  * 优先级队列
  * 1.堆实现

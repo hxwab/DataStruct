@@ -1,6 +1,6 @@
-package com.sort;
+package com.datastruct.sort;
 
-public class ShellSort extends Sort {
+public class HeapSort extends Sort {
 
 	@Override
 	public void order(int[] a) {

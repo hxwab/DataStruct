@@ -1,4 +1,4 @@
-package com.sort;
+package com.datastruct.sort;
 /**
  * 插入排序法，取出比较移位插入
  * @author csdc
