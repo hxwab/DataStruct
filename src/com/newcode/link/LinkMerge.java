@@ -24,7 +24,10 @@ public class LinkMerge {
 		t.next = new ListNode(7);
 		display(l2);
 		
-		display(Merge(l1, l2));
+		//display(Merge(l1, l2));
+		display(Merge1(l2, l1));
+		display(l2);
+		display(l1);
 	}
 	
 	/**
@@ -69,6 +72,31 @@ public class LinkMerge {
 		return head;
         
     }
+	
+	/**
+	 * 递归,链表长的话，递归层数太深，容易造成栈溢出
+	 * @param list1
+	 * @param list2
+	 * @return
+	 */
+	public ListNode Merge1(ListNode list1,ListNode list2){
+		
+		if(list1==null) return list2;
+		if(list2 ==null) return list1;
+		
+		ListNode list ;
+		if(list1.value<=list2.value){
+			list = list1;
+			list.next = Merge1(list1.next, list2);
+		}else {
+			list = list2;
+			list.next = Merge1(list1, list2.next);
+		}
+		
+		return list;
+	}
+	
+	
 	
 	
 	public void display(ListNode node){
