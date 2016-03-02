@@ -5,7 +5,10 @@ public class Tree {
 	
     private TreeNode root;
     
-    
+    /**
+     * 插入
+     * @param node
+     */
     
     public void insert(TreeNode node){
     	
