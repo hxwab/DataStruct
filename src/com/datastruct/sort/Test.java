@@ -11,6 +11,7 @@ public class Test {
 		sort = new InsertSort();
 		sort = new QuickSort();
 		sort = new MergeSort();
+		sort = new Buket();
 		sort.sort(array);
 	}
 
