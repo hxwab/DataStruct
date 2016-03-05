@@ -1,4 +1,6 @@
- /**
+
+package com.leetcode;
+/**
  *http://www.nowcoder.com/practice/75e878df47f24fdc9dc3e400ec6058ca?rp=1&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking
  *链表反转
  
@@ -17,7 +19,7 @@
         this.val = val;
     }
 }
-public class Solution {
+public class ReverseList {
     public ListNode ReverseList(ListNode head) {
         
          if(head==null){

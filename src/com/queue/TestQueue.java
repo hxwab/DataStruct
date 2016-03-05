@@ -27,6 +27,6 @@ public class TestQueue {
 		while(!q.isEmpty()){
 			System.out.println(q.remove());
 
+		}
 	}
-
 }

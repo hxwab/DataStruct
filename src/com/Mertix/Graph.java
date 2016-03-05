@@ -270,8 +270,8 @@ public class Graph {
 	  }
 	  
 	  
-	   有向图的拓扑排序
-	   */
+	 //  有向图的拓扑排序
+	  
 	  public void topo(){
 		  
 		  int size = nVerts;
@@ -294,6 +294,26 @@ public class Graph {
 		  
 		  for(int i=0;i<nVerts;i++)
 		  {
-	  }
+		  }
 	
+	  }
+
+	public int[][] getAdjMat() {
+		return adjMat;
+	}
+
+	public void setAdjMat(int[][] adjMat) {
+		this.adjMat = adjMat;
+	}
+
+	public int getnVerts() {
+		return nVerts;
+	}
+
+	public void setnVerts(int nVerts) {
+		this.nVerts = nVerts;
+	}
+	
+	  
+	  
 }

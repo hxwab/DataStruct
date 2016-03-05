@@ -1,5 +1,8 @@
+package com.leetcode;
 
-public class Solution {
+
+
+public class MinStack {
 
     int [] stack = new int [20];
     int min = Integer.MAX_VALUE;
