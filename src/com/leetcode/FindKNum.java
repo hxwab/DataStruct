@@ -17,7 +17,7 @@ public class FindKNum {
 		
 	}
 	public void getKth(int [] a ,int k){
-		
+		if(a.length<k) return;  //注意边界条件
 		sort(a,0,a.length-1);
 		for(int i=0;i<k;i++){
 			System.out.print(a[i]+"  ");
