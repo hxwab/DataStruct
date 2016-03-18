@@ -3,6 +3,7 @@ package com.newcode.tree;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
@@ -261,14 +262,41 @@ public class TreeUtil  extends AbstractTree {
 				childSize =0;
 				System.out.println();
 			}
-			
-			
 		}
-		
 	}
 	
 	
+	//树的右视图,先层次遍历，每一层标记节点的个数。去每一层的最后节点
 	
+	public void rightSideView(TreeNode root){
+		
+		if(root==null) return ;
+		Queue<TreeNode> queue = new LinkedList<TreeNode>();
+		
+		queue.add(root);
+		TreeNode node ;
+		int childSize=0;
+		int parentSize =1;
+		while(!queue.isEmpty()){
+			node =queue.poll();
+			if(node.left!=null){
+				queue.add(node.left);
+				childSize++;
+			}
+			
+			if(node.right!=null){
+				queue.add(node.right);
+				childSize++;
+			}
+			
+			parentSize--;
+			if(parentSize==0){
+				parentSize =childSize;
+				childSize =0;
+				System.out.println(node.val);
+			}
+		}
+	}
 	
 
 
