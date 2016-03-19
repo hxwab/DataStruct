@@ -114,6 +114,14 @@ public class TreeLevel {
 	}
 	
 	
+	/**
+	 * 采用DFS
+	 * @param root
+	 */
+	public void rightSideView1(TreeNode root){
+		
+		
+	}
 	
 	
 	
