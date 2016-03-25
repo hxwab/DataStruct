@@ -35,6 +35,30 @@ public class Tree {
     }
     
     
+    public void insert(int val){
+    	
+    	TreeNode node =new TreeNode(val);
+    	if(root==null){
+    		root = node;
+    	}
+    	
+    	TreeNode curr = root;
+    	TreeNode  parent =null ;
+    	while(curr!=null){
+    		parent = curr;
+    		if(curr.val<node.val){
+    			curr = curr.right;
+    		}else{
+    			curr = curr.left;
+    		}
+    	}
+    	
+    	if(parent.val<node.val)
+    		parent.right=node;
+    	else
+    		parent.left = node;
+    }
+    
     
     
      public TreeNode getRoot() {
