@@ -38,10 +38,13 @@ public class LinkMerge {
 	 */
 	public ListNode Merge(ListNode list1,ListNode list2) {
 		
+		
+		//处理边界情况
 		ListNode head =null;
 		if(list1==null) return list2;
 		if(list2 == null) return list1;
 		
+		//确定表头
 		if(list1.value<=list2.value){
 			head = list1;
 			list1 = list1.next;
@@ -51,6 +54,7 @@ public class LinkMerge {
 		}
 		ListNode t =head;
 		
+		//按照链表对应的节点值拼接到t后面
 		while(list1!=null&&list2!=null)	{
 			if(list1.value<=list2.value){
 				t.next = list1;
@@ -62,6 +66,8 @@ public class LinkMerge {
 			t = t.next;
 		}
 		
+		
+		//不为空，说明还有没遍历完的，直接拼接到t的后面
 		if(list1!=null){
 			t.next=list1;
 		}
