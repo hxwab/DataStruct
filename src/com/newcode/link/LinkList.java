@@ -6,21 +6,37 @@ package com.newcode.link;
  * @author admin
  *
  */
-public class LinkList extends Link{
+public class LinkList extends AbstractLink{
 	
-	private Node head;
+	public Node head;
+	private Node tail;
 	
-	public Node insert(int val){
+	public void insert(int val){
 		
 		Node node = new Node(val, head);
-		node.addBefore(head);
+		if(head!=null)
+		   node.addBefore(head);
+		else tail =node;
 		head = node;
 		
-		return head;
 	}
 	
 	
-	static class Node extends Link.Node{
+	public void delete(int val , String str){
+	}
+	
+	public void revert(){
+		Node curr=tail;
+		while(curr!=null){
+			System.out.print(curr.vaule+" ");
+			curr=curr.pre;
+		}
+		System.out.println();
+		
+	}
+	
+	
+	static class Node extends AbstractLink.Node{
 
 		Node pre;
 		 public Node(int value,Node next) {
@@ -28,9 +44,16 @@ public class LinkList extends Link{
 			}
 		 
 		  private void addBefore(Node node) {
-	            node.pre =node;
+	            node.pre =this;
 	        }
 		 
+	}
+
+
+	@Override
+	public void delete(int val) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 

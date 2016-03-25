@@ -24,7 +24,6 @@ public class Link {
 		Node last = getLastNode();
 		last.next=node;
 		return head;
-		
 	}
 	
 	/**
