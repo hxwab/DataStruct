@@ -56,7 +56,7 @@ public class Link {
 	 * @return
 	 */
 	public Node delete(int value){
-		Node pre= head;
+		Node pre= null;
 		Node curr = head;
 		
 		while(curr!=null){
@@ -66,11 +66,54 @@ public class Link {
 		}
 		
 		if(curr==null) return null;
-		
+		if(pre==null) {
+			head =curr.next;
+			return curr;
+		}
 		pre.next=curr.next;
 		
 		return curr;
 	}
+	
+	public void delete(int val,String str){
+	
+		Node [] node =findNode(val);
+		if(node==null) return ;
+		Node pre = node[0];
+		Node curr = node[1];
+		if(pre==null) {
+			head = curr.next;
+		}else {
+			
+			pre.next=curr.next;
+		}
+		
+	}
+	
+	
+	
+	/**
+	 * 返回当前节点和前驱
+	 * @param val
+	 * @return
+	 */
+	public Node[] findNode(int val){
+		Node pre= null;
+		Node curr = head;
+		
+		while(curr!=null){
+			if(curr.vaule==val) break;
+			pre = curr;
+			curr = curr.next;
+		}
+		
+		if(curr==null) return null;
+		if(pre==null) return new Node[]{null,curr};
+		
+		return new Node[]{pre,curr};
+		
+	}
+	
 	
 	/**
 	 * 打印链表

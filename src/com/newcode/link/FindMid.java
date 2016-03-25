@@ -18,6 +18,8 @@ public class FindMid {
 		f.creat();
 		link.display();
 		System.out.println(f.getMid());
+		link.delete(0,null);
+		link.display();
 		
 	}
 	
