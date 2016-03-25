@@ -16,10 +16,15 @@ public class FindMid {
 		
 		FindMid f =new FindMid();
 		f.creat();
-		link.display();
+		/*link.display();
 		System.out.println(f.getMid());
 		link.delete(0,null);
-		link.display();
+		link.display();*/
+		
+		LinkList list = new LinkList();
+		f.creat(list, 10);
+		list.display(list.head);
+		list.revert();
 		
 	}
 	
@@ -38,6 +43,12 @@ public class FindMid {
 		return slow.vaule;
 	}
 	
+	public void creat(LinkList  list,int num){
+		Random r =new Random();
+		for(int i=0;i<num;i++){
+			list.insert(r.nextInt(50));
+		}
+	}
 	
 	/**
 	 * 随机生成链表
