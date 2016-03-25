@@ -81,6 +81,7 @@ public class Link {
 			System.out.print(curr.vaule + " ");
 			curr=curr.next;
 		}
+		System.out.println();
 	}
 	
 	 static class Node{
