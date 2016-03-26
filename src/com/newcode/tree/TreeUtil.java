@@ -21,17 +21,25 @@ public class TreeUtil  extends AbstractTree {
 	
 	public  static int getTreeDeep(TreeNode root){
 		
+		int right=0;
+		int left=0;
 		if(root ==null) return 0;
 		
-		int right = getTreeDeep(root.right);
-		int left = getTreeDeep(root.left);
+		 right += getTreeDeep(root.right);
+		 left += getTreeDeep(root.left);
 		
 		return left>right?(left+1):(right+1);
 		
 	}
 
 
-
+   public static int getMinDepth(TreeNode root){
+	   
+	   if(root==null) return 0;
+	   int min = 1+Math.min(getMinDepth(root.left), getMinDepth(root.right));
+	   
+	   return min;
+   }
 
 
 
@@ -111,11 +119,12 @@ public class TreeUtil  extends AbstractTree {
    //获得树的高度
 	@Override
 	public int getTreeHeight(TreeNode root) {
-		
+		int right=0;
+		int left =0;
 		if(root==null) return 0;
 		
-		int right = getTreeHeight(root.right);
-		int left = getTreeHeight(root.left);
+		 right += getTreeHeight(root.right);
+		 left += getTreeHeight(root.left);
 		
 		return Math.max(right+1, left+1);
 	}

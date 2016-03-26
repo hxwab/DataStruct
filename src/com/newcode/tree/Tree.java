@@ -83,8 +83,8 @@ public class Tree  implements ITree{
 
 	@Override
 	public boolean isBalance(TreeNode root) {
-		// TODO Auto-generated method stub
-		return false;
+		int sub = getDepth(root)-getMinHeight(root);
+		return sub<=1;
 	}
 
 
@@ -97,7 +97,6 @@ public class Tree  implements ITree{
 
 	@Override
 	public int getMinHeight(TreeNode root) {
-		// TODO Auto-generated method stub
-		return 0;
+		return TreeUtil.getMinDepth(root);
 	}
 }
