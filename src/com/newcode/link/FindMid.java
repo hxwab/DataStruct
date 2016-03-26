@@ -26,6 +26,9 @@ public class FindMid {
 		list.display(list.head);
 		list.revert();
 		
+		com.newcode.link.LinkList.Node [] node = list.findNode(10);
+		System.out.println(node[0].vaule + " " +node[1].vaule);
+		
 	}
 	
 	

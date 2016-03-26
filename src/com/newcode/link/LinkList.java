@@ -8,7 +8,7 @@ package com.newcode.link;
  */
 public class LinkList extends AbstractLink{
 	
-	public Node head;
+	//protected Node head;
 	private Node tail;
 	
 	public void insert(int val){
