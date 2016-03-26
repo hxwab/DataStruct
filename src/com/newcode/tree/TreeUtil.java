@@ -19,20 +19,14 @@ public class TreeUtil  extends AbstractTree {
 	
 	
 	
-	
-	
-	
-	
-	
-	
-	public int getTreeDeep(TreeNode root){
+	public  static int getTreeDeep(TreeNode root){
 		
 		if(root ==null) return 0;
 		
 		int right = getTreeDeep(root.right);
 		int left = getTreeDeep(root.left);
 		
-		return left>right?left:right;
+		return left>right?(left+1):(right+1);
 		
 	}
 

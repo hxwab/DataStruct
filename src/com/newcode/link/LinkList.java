@@ -22,6 +22,15 @@ public class LinkList extends AbstractLink{
 	}
 	
 	
+	@Override
+	public void delete(int val) {
+		
+		
+		
+	}
+	
+	
+	
 	public void delete(int val , String str){
 	}
 	
@@ -50,11 +59,7 @@ public class LinkList extends AbstractLink{
 	}
 
 
-	@Override
-	public void delete(int val) {
-		// TODO Auto-generated method stub
-		
-	}
+	
 	
 
 }

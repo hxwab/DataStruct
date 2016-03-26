@@ -1,7 +1,7 @@
 package com.newcode.tree;
 
 
-public class Tree {
+public class Tree  implements ITree{
 	
     private TreeNode root;
     
@@ -77,4 +77,27 @@ public class Tree {
             this.val = val;
         }
     }
+
+
+
+
+	@Override
+	public boolean isBalance(TreeNode root) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+
+	@Override
+	public int getDepth(TreeNode root) {
+		int treeDepth =TreeUtil.getTreeDeep(root);
+		return treeDepth;
+	}
+
+
+	@Override
+	public int getMinHeight(TreeNode root) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 }
