@@ -1,12 +1,10 @@
 package com.newcode.link;
 
-import com.newcode.link.LinkList.Node;
-
 
 public abstract class AbstractLink {
 
 	
-	protected Node head;
+	protected LinkList.Node head;
 	
 	public abstract void insert(int val);
 	
@@ -18,20 +16,20 @@ public abstract class AbstractLink {
 	 * @param val
 	 * @return
 	 */
-	public Node[] findNode(int val){
-		Node pre= null;
-		Node curr = head;
+	public LinkList.Node[] findNode(int val){
+		LinkList.Node pre= null;
+		LinkList.Node curr = head;
 		
 		while(curr!=null){
 			if(curr.vaule==val) break;
 			pre = curr;
-			curr = curr.next;
+			curr = (LinkList.Node) curr.next;
 		}
 		
 		if(curr==null) return null;
-		if(pre==null) return new Node[]{null,curr};
+		if(pre==null) return new LinkList.Node[]{null,curr};
 		
-		return new Node[]{pre,curr};
+		return new LinkList.Node[]{pre,curr};
 		
 	}
 	
