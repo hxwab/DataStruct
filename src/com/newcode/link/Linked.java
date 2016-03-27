@@ -2,13 +2,13 @@ package com.newcode.link;
 
 
 
-public class Linked extends AbstractLink {
+public class Linked extends Link {
 
-	protected Node head;
+	protected Node tail;
 	
 	
 	@Override
-	public void insert(int val) {
+	public Node insert(int val) {
 		Node node = new Node(val, head);
 		if(head!=null)
 		   node.addBefore(head);
@@ -23,15 +23,15 @@ public class Linked extends AbstractLink {
 		
 	}
 	
-	static class Node extends AbstractLink.Node{
+	private static class Node extends Link.Node{
 
 		Node pre;
-		 public Node(int value,Node next) {
+		 public Node(int value,Link.Node next) {
 				super(value,next);
 			}
 		 
 		  private void addBefore(Node node) {
-	            node.pre =node;
+	            node.pre =this;
 	        }
 		 
 	}

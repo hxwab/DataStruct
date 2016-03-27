@@ -2,7 +2,7 @@ package com.newcode.link;
 
 public class Link {
 	
-	private Node head;
+	protected Node head;
 	
 	/**
 	 * 插入到链表头部
