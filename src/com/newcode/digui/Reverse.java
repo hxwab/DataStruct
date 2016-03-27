@@ -18,10 +18,8 @@ public class Reverse {
 		System.out.println(s==null);
 		int x=20,y=5;
 		System.out.println(x+y +""+(x+y)+y); 
-		
 		new Reverse().reveser(12345);
 		System.out.println(str);
-		
 		System.out.println(new Reverse().reverse(12345));
 	}
 	
