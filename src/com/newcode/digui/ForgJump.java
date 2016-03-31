@@ -84,10 +84,10 @@ public class ForgJump {
 	//采用动态规划
 	
 	public int jumpFloors(int number) {
-	    int []  a = new int [1000];
+	    int []  a = new int [number+1];
 	    a[0]=1;
 	    a[1] =1;
-	    for(int i=2;i<1000;i++)
+	    for(int i=2;i<number+1;i++)
 	    {
 	        a[i]=a[i-1]+a[i-2];  
 	    }

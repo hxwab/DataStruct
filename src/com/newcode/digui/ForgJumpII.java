@@ -2,7 +2,7 @@ package com.newcode.digui;
 /**
  * 一只青蛙一次可以跳上1级台阶，也可以跳上2级……它也可以跳上n级。求该青蛙跳上一个n级的台阶总共有多少种跳法。
  * @author csdc
- *
+ *p[n]=sum(p[n-1],.....p[1],p[0]) =  2*p[n-1]
  */
 public class ForgJumpII {
 

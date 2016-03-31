@@ -2,7 +2,12 @@ package com.newcode.string;
 
 import java.util.HashMap;
 import java.util.Map;
-
+/**
+ * 寻找字符串中第一个只出现一次的字符
+ * 
+ * @author admin
+ *
+ */
 public class FindTheFirstChar {
 	
 	public static void main(String[] args) {
