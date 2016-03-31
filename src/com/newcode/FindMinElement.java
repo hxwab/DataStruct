@@ -13,7 +13,7 @@ public class FindMinElement {
 
 	public static void main(String[] args) {
 		int a[] = {4,5,6,7,8,1 ,2,3};
-		new FindMinElement().findNum(a);
+		new FindMinElement().findNum(a,1);
 	}
 	
 	
