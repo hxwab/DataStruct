@@ -31,17 +31,11 @@ public class PrintTree {
 		System.out.print(root.val +" ");
 		if(root.left!=null){
 			System.out.print(root.left.val+" ");
+			print(root.left);
 		}
 		
 		if(root.right!=null){
 			System.out.print(root.right.val+" ");
-		}
-		
-		if(root.left!=null){
-           print(root.left)	;	
-           }
-		
-		if(root.right!=null){
 			print(root.right);
 		}
 		

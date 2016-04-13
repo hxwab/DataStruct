@@ -40,6 +40,7 @@ public class Tree  implements ITree{
     	TreeNode node =new TreeNode(val);
     	if(root==null){
     		root = node;
+    		return ;
     	}
     	
     	TreeNode curr = root;
