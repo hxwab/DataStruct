@@ -8,6 +8,9 @@ package com.newcode;
  *首中尾
  *1、遍历
  *2、二分查找
+ *
+ *
+ *拓展一下：寻找特定的元素头尾指针，加中间指针
  */
 public class FindMinElement {
 
