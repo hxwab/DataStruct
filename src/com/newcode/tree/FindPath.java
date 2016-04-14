@@ -17,14 +17,16 @@ public class FindPath {
 	public static void main(String[] args) {
 		
 		try {
-			
+			//10,5,12,4,7
 			Tree tree  = new Tree();
 			
-			tree.insert(new TreeNode(10));
-			tree.insert(new TreeNode(5));
-			tree.insert(new TreeNode(12));
-			tree.insert(new TreeNode(2));
-			tree.insert(new TreeNode(7));
+			tree.insert(10);
+			tree.insert(5);
+			tree.insert(12);
+			
+
+			tree.insert(2);
+			tree.insert(7);
 			
 			Stack<Integer> stack = new Stack<Integer>();
 			
@@ -41,15 +43,17 @@ public class FindPath {
 		
 		if(root==null)   return ;
  		stack.push(root.val);
-		if(root.val==total) {
+ 		//根节点
+		if(root.left==null&&root.right==null&&root.val==total) {
 			print(stack);
+			stack.pop();
 			return ;
 		}
 
 		
-		if(root.left!=null)
+		if(root.left!=null&&total>root.val)
 			findNPath(root.left, total-root.val, stack);
-		if(root.right!=null)
+		if(root.right!=null&&total>root.val)
 			findNPath(root.right, total-root.val, stack);
 		
 
