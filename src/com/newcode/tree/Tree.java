@@ -14,6 +14,7 @@ public class Tree  implements ITree{
     	
     	if(root==null){
     		root = node;
+    		return ;
     	}
     	
     	TreeNode curr = root;

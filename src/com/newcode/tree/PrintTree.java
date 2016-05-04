@@ -13,7 +13,7 @@ public class PrintTree {
 	private  static Tree tree = new Tree();
 	
 	public static void main(String[] args) {
-		tree.insert(new TreeNode(1));
+		tree.insert(1);
 		tree.insert(new TreeNode(2));
 		tree.insert(new TreeNode(3));
 		tree.insert(new TreeNode(4));
