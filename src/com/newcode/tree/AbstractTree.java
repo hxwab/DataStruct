@@ -75,6 +75,102 @@ public  abstract class  AbstractTree {
 	public abstract void mirrorTree(TreeNode root);
 	
 	/**
+	 *  将二叉查找树变为有序的双向链表
+	 * @return
+	 */
+	public abstract TreeNode tree2Link(TreeNode root);
+	
+	
+	/**
+	 * 求二叉树第K层的节点个数
+	 * @param root
+	 * @return
+	 */
+	public abstract int getKLevelNodeNum(TreeNode root);
+	
+	/*
+	 * 判断两棵二叉树是否结构相同
+	 * 
+	 */
+	public abstract boolean isSmilarity(TreeNode root1,TreeNode root2);
+	
+	
+	/**
+	 * 求二叉树中两个节点的最低公共祖先节点
+	 * @param node1
+	 * @param node2
+	 * @return
+	 */
+	public abstract TreeNode LCA(TreeNode node1,TreeNode node2);
+	
+	
+	/**
+	 * 求二叉树中节点的最大距离
+	 * @param node1
+	 * @param node2
+	 * @return
+	 */
+	public abstract int getMaxDistance(TreeNode node1,TreeNode node2);
+	
+	/**
+	 * 由前序遍历序列和中序遍历序列重建二叉树
+	 * @param preRoot1
+	 * @param afRoot2
+	 * @return
+	 */
+	public abstract TreeNode rebulid(TreeNode preRoot1,TreeNode afRoot2);
+	
+	
+	/**
+	 * 判断二叉树是不是完全二叉树
+	 * @param root
+	 * @return
+	 */
+	public abstract boolean isPrefectTree(TreeNode root);
+	
+	
+	/**
+	 * 有问题？？
+	 * 
+	 * 判断两个二叉树是否是子树
+	 * @param root1
+	 * @param root2
+	 * @return
+	 */
+	public  boolean isSubTree(TreeNode root1,TreeNode root2){
+		boolean result=false;
+		
+		if(root1==null||root2==null) return true;
+		
+		TreeNode nodeIn1 =find(root1,root2);
+		if(nodeIn1==null) return false;
+		
+			result = isSubTree(nodeIn1.left,root2.left)&&isSubTree(nodeIn1.right,root2.right);
+		
+		return result;
+		
+	}
+	
+	
+	public boolean isEqualTree(TreeNode root1,TreeNode root2){
+		
+		return true;
+	}
+	
+	
+	public TreeNode find(TreeNode root1,TreeNode root2){
+		
+		if(root1==null||root2==null) return null;
+		
+		if(root1.val==root2.val) return root1;
+		TreeNode left =find(root1.left,root2);
+		TreeNode right=find(root1.right,root2);
+		
+		return left!=null?left:right;
+		
+	}
+	
+	/**
 	 * 
 	 * 
 	 * 
