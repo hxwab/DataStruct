@@ -4,7 +4,8 @@ package com.newcode;
  * 统计一个数字在排序数组中出现的次数。
  * @author csdc
  *
- *1.
+ *1.二分找到该数，然后前后计数
+ *2.二分找到第一个和最后一个，然后相减
  */
 public class GetNumberOfK {
 
@@ -13,7 +14,7 @@ public class GetNumberOfK {
 		GetNumberOfK g = new GetNumberOfK();
 		int re= g.getNum(new int[]{1,2,3,3,4}, 5);
 		System.out.println(re);
-		
+		System.out.println(g.getFirst(new int[]{1,2,3,3,3,4}, 3));
 	}
 	
 	public int getNum(int[] arr,int k){
@@ -53,5 +54,30 @@ public class GetNumberOfK {
 		return count;
 	}
 	
+	
+	public int getFirst(int [] arr ,int k){
+		int left = 0;
+		int right = arr.length;
+		int mid=0;
+		while(left<=right&&right>=0){
+			 mid =(left+right)/2;
+
+			if(arr[mid]==k){
+				if(mid>0&&arr[mid-1]!=arr[mid]){
+					return mid;
+				}else{
+					
+					right= mid-1;
+				}
+			}else if(arr[mid]<k){
+				left=mid+1;
+			}else{
+				right=mid-1;
+			}
+			
+		}
+		
+		return mid;
+	}
 	
 }
