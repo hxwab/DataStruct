@@ -29,15 +29,20 @@ public class PrintTree {
 		if(root==null) return;
 		
 		System.out.print(root.val +" ");
-		if(root.left!=null){
-			System.out.print(root.left.val+" ");
+		/*if(root.left!=null){
+			//System.out.print(root.left.val+" ");
 			print(root.left);
 		}
 		
 		if(root.right!=null){
-			System.out.print(root.right.val+" ");
+			//System.out.print(root.right.val+" ");
 			print(root.right);
 		}
+		*/
+		print(root.left);
+
+		print(root.right);
+
 		
 		return ;
 		
