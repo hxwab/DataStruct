@@ -36,31 +36,38 @@ public class Tree  implements ITree{
     }
     
     
-    public void insert(int val){
+    public TreeNode insert(int val){
     	
     	TreeNode node =new TreeNode(val);
-    	if(root==null){
-    		root = node;
-    		return ;
-    	}
-    	
-    	TreeNode curr = root;
-    	TreeNode  parent =null ;
-    	while(curr!=null){
-    		parent = curr;
-    		if(curr.val<node.val){
-    			curr = curr.right;
-    		}else{
-    			curr = curr.left;
-    		}
-    	}
-    	
-    	if(parent.val<node.val)
-    		parent.right=node;
-    	else
-    		parent.left = node;
+    	insert(node);
+    	return node;
     }
     
+//    public void insert(int val){
+//    	
+//    	TreeNode node =new TreeNode(val);
+//    	if(root==null){
+//    		root = node;
+//    		return ;
+//    	}
+//    	
+//    	TreeNode curr = root;
+//    	TreeNode  parent =null ;
+//    	while(curr!=null){
+//    		parent = curr;
+//    		if(curr.val<node.val){
+//    			curr = curr.right;
+//    		}else{
+//    			curr = curr.left;
+//    		}
+//    	}
+//    	
+//    	if(parent.val<node.val)
+//    		parent.right=node;
+//    	else
+//    		parent.left = node;
+//    }
+//    
     
     
      public TreeNode getRoot() {
@@ -100,5 +107,19 @@ public class Tree  implements ITree{
 	@Override
 	public int getMinHeight(TreeNode root) {
 		return TreeUtil.getMinDepth(root);
+	}
+
+
+	@Override
+	public void delete(TreeNode node) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public boolean isTreeNode(int val) {
+		// TODO Auto-generated method stub
+		return false;
 	}
 }
