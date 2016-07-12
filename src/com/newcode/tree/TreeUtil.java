@@ -119,12 +119,17 @@ public class TreeUtil  extends AbstractTree {
    //获得树的高度
 	@Override
 	public int getTreeHeight(TreeNode root) {
-		int right=0;
+		/*int right=0;
 		int left =0;
 		if(root==null) return 0;
 		
 		 right += getTreeHeight(root.right);
-		 left += getTreeHeight(root.left);
+		 left += getTreeHeight(root.left);*/
+
+		if(root==null) return 0;
+		
+		int left  = getTreeHeight(root.left);
+		int right = getTreeHeight(root.right);
 		
 		return Math.max(right+1, left+1);
 	}

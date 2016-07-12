@@ -191,4 +191,27 @@ public  abstract class  AbstractTree {
 15.判断两个二叉树是否是子树
 	 */
 
+	
+	
+	/**
+	 * 求二叉树中的节点个数
+	 * 递归解法：
+	（1）如果二叉树为空，节点个数为0
+	（2）如果二叉树不为空，二叉树节点个数 = 左子树节点个数 + 右子树节点个数 + 1
+	 * @param root
+	 * @return
+	 */
+	protected int getNodesNum(TreeNode root){
+		
+		if(root==null) return 0;
+		
+		return getNodesNum(root.left)+getNodesNum(root.right)+1;
+		
+	}
+	
+	
+	
+	
+	
+	
 }
