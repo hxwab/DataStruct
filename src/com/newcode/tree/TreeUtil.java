@@ -331,8 +331,98 @@ public class TreeUtil  extends AbstractTree {
 		
 		
 	}
+
+
+	@Override
+	public TreeNode tree2Link(TreeNode root) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	@Override
+	public int getKLevelNodeNum(TreeNode root) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+
+	@Override
+	public boolean isSmilarity(TreeNode root1, TreeNode root2) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+
+	@Override
+	public TreeNode LCA(TreeNode node1, TreeNode node2) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	@Override
+	public int getMaxDistance(TreeNode node1, TreeNode node2) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+
+	@Override
+	public TreeNode rebulid(TreeNode preRoot1, TreeNode afRoot2) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	@Override
+	public boolean isPrefectTree(TreeNode root) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+
 	
+	/**
+	 * 判断root2是否是root1的子树
+	 * 1。先比较根节点是否相同，若不同则拿root1的子节点比较
+	 * 2.根节点相同，则依次比较子节点。
+	 */
+	public boolean isSubTree(TreeNode root1, TreeNode root2) {
+		
+		boolean result = false;
+		if(root1!=null&&root2!=null){
+			
+			if(root1.val==root2.val){
+				result = isPart(root1,root2);
+			}
+			
+			if(!result)
+				result=isSubTree(root1.left,root2);
+			if(!result)
+				result = isSubTree(root1.right,root2);
+			
+		}
+		
+		return result;
+		
+	}
 	
+	/**
+	 * 判断root2是否是root的子树
+	 * @param root1
+	 * @param root2
+	 * @return
+	 */
+	public boolean isPart(TreeNode root, TreeNode root2){
+		if(root2==null) return true;
+		if(root==null) return false;
+		
+		if(root2.val!=root.val) return false;
+		
+		return isPart(root.right,root2.right)&&isPart(root.left,root2.left);
+		 
+	}
 	
 	
 
