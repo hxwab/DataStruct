@@ -6,6 +6,7 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
+import java.util.Stack;
 
 import com.newcode.tree.Tree.TreeNode;
 
@@ -162,9 +163,57 @@ public class TreeUtil  extends AbstractTree {
 
 
 
+	/**
+	 * 题目：输入一个整数和一颗二叉树。
+      从树的根结点开始往下访问一直到叶结点所经过的所有结点形成一条路径。
+      打印出与输入整数相等的所有路径。
+      例如 输入整数22和如下二元树
+       	10
+        / \
+       5   12
+      / \
+    4   7
+     则打印出两条路径：10，12和12，5，7
+  分析：
+     在二叉树中寻找满足条件的所有结点序列，需要输出所有的序列。
+     此时，很自然的就应该想到使用栈这样的数据结构。
+     访问结点为一个函数，在进入这个函数的时候，首先把要访问的结点压入栈中。
+     计算此时所有的路径长度，如果满足指定的条件，则输出序列。
+     如果存在子节点的时候，就需要递归调用该函数访问子节点。
+     最后在退出函数的时候，记得要将当前结点从栈中弹出。
+     总体的思想即是如此，下面为具体实现。
+ 
+	 * 
+	 */
+	
+	static  Stack<TreeNode> stack = new Stack<Tree.TreeNode>();
 	@Override
 	public void printRout(TreeNode root, int sum) {
-		// TODO Auto-generated method stub
+
+		if(root==null) return ;
+		stack.push(root);
+		
+		if(root.left==null&&root.right==null&&root.val==sum){
+			print(stack);
+			stack.pop();
+			return ;
+		}
+		
+		if(root.val<sum){
+			printRout(root.left, sum-root.val);
+			printRout(root.right, sum-root.val);
+		}
+		stack.pop();
+		
+		
+	}
+	
+	public void print (Stack<TreeNode> stack){
+		for(TreeNode node :stack){
+			System.out.print(node.val+ "  ");
+		}
+		System.out.println();
+		
 		
 	}
 
